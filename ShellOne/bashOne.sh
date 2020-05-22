@@ -17,7 +17,7 @@ else
 fi
 
 
-if [ -e /home/runner/bash/ShellOne/bashOne.sh ];
+if [ -a /home/runner/bash/ShellOne/bashOne.sh ];
 then
 	echo "Script found"
 else
