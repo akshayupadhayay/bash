@@ -1,1 +1,1 @@
-*[Important Shell Scripts]
+*Important Shell Scripts
