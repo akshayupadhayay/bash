@@ -92,5 +92,7 @@ do
 done
 
 
-
+#Cut command - Given a tab delimited file with several columns (tsv format) print the first three fields
+cut -f1-3 #tab is a defualt delimeter
+cut -f1,3 #1st & 3rd fields
 
