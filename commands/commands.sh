@@ -126,3 +126,8 @@ cat | cut -d$'\n' -f -20
 cat | head -c20 </dev/stdin
 
 
+#Head command - Display the lines (from line number 12 to 22, both inclusive) of a given text file.
+cat </dev/stdin | head -n 22 | tail -n +12 #12th line inclusive
+cat </dev/stdin | head -n 22 | tail -n 12  #12th line exclusive 
+
+
