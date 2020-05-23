@@ -167,6 +167,18 @@ cat </dev/stdin | sort -t$'|' -k 2 -rn   #descending 2nd column, pipe delimeter
 
 
 
+#uniq command - Given a text file, count the number of times each line repeats itself. Only consider consecutive repetitions. Display the space separated count and line, respectively. There shouldn't be any leading or trailing spaces.
+uniq -c | sed 's/^ *//'
+uniq -c -i | sed 's/^ *//'   #ignore case sensitive (aa AA aA are all same)
+
+
+#uniq command - Given a text file, display only those lines which are not followed or preceded by identical replications.
+uniq -u  #       Don't output lines that are repeated in the input.Print only lines that are unique in the INPUT.
+
+
+
+
+
 
 
 
