@@ -131,3 +131,11 @@ cat </dev/stdin | head -n 22 | tail -n +12 #12th line inclusive
 cat </dev/stdin | head -n 22 | tail -n 12  #12th line exclusive 
 
 
+#Tail command - last 20 lines of file
+cat </dev/stdin | tail -n 20
+cat </dev/stdin | tail -c20 # last 20 characters
+
+#Tail command - Display the last 20 characters of an input file
+
+
+
