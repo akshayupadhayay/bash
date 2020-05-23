@@ -63,3 +63,13 @@ arr=($(cat))
 arr=${arr[*]} #1,2,3,4 => "1 2 3 4"
 printf "%.3f" $(echo $((${arr// /+}))/$number |bc -l)
 => 4 1 2 9 8 => 5.000
+
+
+#Cut command - cut 3rd char from a text file with 100 sentence
+input="/path/file.txt"
+while IFS= read -r line
+do
+  echo "$line"
+done < "$input"
+N=$(<$input) #OR N=`cat $input`
+cut -c3 $N
