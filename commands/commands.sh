@@ -55,3 +55,11 @@ echo $BIRTHDAY
 read NUMBER
 echo $NUMBER | bc -l | xargs printf "%.3f"
 => 5+50*3/20 + (19*2)/7 => 17.929
+
+
+#input N number and find average upto 3 decimal
+read number
+arr=($(cat))
+arr=${arr[*]} #1,2,3,4 => "1 2 3 4"
+printf "%.3f" $(echo $((${arr// /+}))/$number |bc -l)
+=> 4 1 2 9 8 => 5.000
