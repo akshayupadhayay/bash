@@ -177,6 +177,13 @@ uniq -u  #       Don't output lines that are repeated in the input.Print only li
 
 
 
+#paste command - You are given a CSV file where each row contains the name of a city and its state separated by a comma. Merge all lines from newline by tab
+paste -s                              #merge all lines separated by tab
+cat </dev/stdin | paste - - -         #merge 3 lines at a time
+cat </dev/stdin | paste -s -d ';'     #replace the newlines in the file with semicolons
+cat </dev/stdin | paste - - - -d ';'  #merge 3 lines at a time & replace the '\n' with ';'
+
+
 
 
 
