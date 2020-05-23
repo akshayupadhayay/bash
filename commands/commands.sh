@@ -49,3 +49,9 @@ BIRTHDATE="Jan 1, 2020"
 BIRTHDAY=`date -d "$BIRTHDATE" +%A`
 echo $BIRTHDAY
 => Wednesday
+
+
+#pass numeric formula to bc command and print 3 decimal
+read NUMBER
+echo $NUMBER | bc -l | xargs printf "%.3f"
+=> 5+50*3/20 + (19*2)/7 => 17.929
