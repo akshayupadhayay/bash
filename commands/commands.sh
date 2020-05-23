@@ -116,9 +116,13 @@ cut -d ' ' -f1-3
 cut -f2-
 
 
-#Head command - Display the first  lines of an input file.
+#Head command - Display the first 20 lines of an input file.
 head -20 </dev/stdin
 #OR
 cat | cut -d$'\n' -f -20
+
+
+#Head command - Display the first 20 characters of an input file
+cat | head -c20 </dev/stdin
 
 
