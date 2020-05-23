@@ -150,3 +150,17 @@ tr -d "a-z"
 #tr command - In a given fragment of text, replace all sequences of multiple spaces with just one space.
 tr -s " "
 
+
+#sort command - Given a text file order lines
+cat </dev/stdin | sort        #alphabetical order - lexicographical
+cat </dev/stdin | sort -r     #reverse alphabetical order
+cat </dev/stdin | sort -n     #numeric ascending inclusive decimals
+cat </dev/stdin | sort -rn    #numeric descending inclusive decimals
+
+# sort command - Rearrange the rows of the table in descending order of the values for the average temperature (2nd column)
+# Albany, N.Y.    22.2    46.6    71.1    49.3    38.60    136    64.4    57
+# Albuquerque, N.M.    35.7    55.6    78.5    57.3    9.47    60    11.0    64
+# Anchorage, Alaska    15.8    36.3    58.4    34.1    16.08    115    70.8    39 / 60
+cat </dev/stdin | sort -t$'\t' -k 2 -rn  #-t option to specify the delimeter
+
+
