@@ -33,6 +33,11 @@ FILELIST=`ls -la`
 echo $FILELIST
 
 
+#output based on user input
+read INPUT
+[[ $INPUT = [Yy] ]] && echo "YES" || echo "NO"
+
+
 #create filename runtime
 FileWithTimeStamp=/tmp/my-dir/file_$(/bin/date +%Y-%m-%d).txt
 echo $FileWithTimeStamp
