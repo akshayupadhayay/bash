@@ -184,8 +184,13 @@ cat </dev/stdin | paste -s -d ';'     #replace the newlines in the file with sem
 cat </dev/stdin | paste - - - -d ';'  #merge 3 lines at a time & replace the '\n' with ';'
 
 
+#array command - Display the entire array of country names and replace '\n' with a space between each of them.
+arr=$(cat)
+echo ${arr[@]}
 
-
+#array command -  slice the array and display only the elements lying between positions 3 and 7, both inclusive.
+arr=($(cat))
+echo ${arr[@]:3:5}
 
 
 
