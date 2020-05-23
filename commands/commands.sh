@@ -135,11 +135,18 @@ cat </dev/stdin | head -n 22 | tail -n 12  #12th line exclusive
 cat </dev/stdin | tail -n 20
 cat </dev/stdin | tail -c20 # last 20 characters
 
-#Transform command - In a given fragment of text, replace all parentheses ()   with box brackets [] .
+
+
+#tr command - In a given fragment of text, replace all parentheses ()   with box brackets [] .
 tr "()" "[]"
 #OR
 echo "abc" | tr "a-z" "A-Z"*
 =>ABC
 
 
+#tr command - In a given fragment of text, delete all the lowercase characters.
+tr -d "a-z"
+
+#tr command - In a given fragment of text, replace all sequences of multiple spaces with just one space.
+tr -s " "
 
