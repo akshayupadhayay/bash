@@ -74,6 +74,7 @@ done < "$input"
 N=$(<$input) #OR N=`cat $input`
 cut -c3 $N
 
+
 #Cut command - cut 2nd & 7th char from a text file with 100 sentence
 input="/path/file.txt"
 while IFS= read -r line
@@ -81,5 +82,15 @@ do
   echo "$line"
 done < "$input"
 N=$(<$input) #OR N=`cat $input`
-cut -c3 $N
+cut -c2,7 $N
+
+
+#Cut command - cut from 2nd till 7th both inclusive from file.txt
+while read LINE
+do
+    echo $LINE | cut -c2-7
+done
+
+
+
 
