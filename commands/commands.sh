@@ -111,3 +111,14 @@ cut -d ' ' -f4
 #Cut command - Given a sentence, identify and display its first three words. Assume that the space (' ') is the only delimiter between words.
 cut -d ' ' -f1-3
 
+
+#Cut command - Given a tab delimited file with several columns (tsv format) print the fields from second fields to last field.
+cut -f2-
+
+
+#Head command - Display the first  lines of an input file.
+head -20 </dev/stdin
+#OR
+cat | cut -d$'\n' -f -20
+
+
