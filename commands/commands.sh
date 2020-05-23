@@ -186,12 +186,28 @@ cat </dev/stdin | paste - - - -d ';'  #merge 3 lines at a time & replace the '\n
 
 #array command - Display the entire array of country names and replace '\n' with a space between each of them.
 arr=$(cat)
-echo ${arr[@]}
+echo ${arr[@]}      #all elements
+echo ${arr[3]}      #3rd element
+echo ${#arr[@]}     #length of array
 
 #array command -  slice the array and display only the elements lying between positions 3 and 7, both inclusive.
 arr=($(cat))
 echo ${arr[@]:3:5}
 
+#array command - filter out (remove) all the names containing the letter 'a' or 'A' from array.
+arr=($(cat))
+pattern=( ${arr[@]/*[aA]*/} )
+echo ${pattern[@]}
+
+
+#The first capital letter (if present) in each element of the array should be replaced with a dot ('.').
+echo ${arr[@]/[A-Z]/.}      
+
+
+#array command - contatenate array 3 times and print with space separated.
+arr=($(cat))
+newarr=("${arr[@]}" "${arr[@]}" "${arr[@]}")
+echo ${newarr[@]}
 
 
 
