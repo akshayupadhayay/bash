@@ -96,3 +96,18 @@ done
 cut -f1-3 #tab is a defualt delimeter
 cut -f1,3 #1st & 3rd fields
 
+
+#Cut command - cut from 13th till end of line
+while read LINE
+do
+    echo $LINE | cut -c13-
+done
+
+
+#Cut command - Given a sentence, identify and display its fourth word. Assume that the space (' ') is the only delimiter between words.
+cut -d ' ' -f4
+
+
+#Cut command - Given a sentence, identify and display its first three words. Assume that the space (' ') is the only delimiter between words.
+cut -d ' ' -f1-3
+
