@@ -162,5 +162,13 @@ cat </dev/stdin | sort -rn    #numeric descending inclusive decimals
 # Albuquerque, N.M.    35.7    55.6    78.5    57.3    9.47    60    11.0    64
 # Anchorage, Alaska    15.8    36.3    58.4    34.1    16.08    115    70.8    39 / 60
 cat </dev/stdin | sort -t$'\t' -k 2 -rn  #-t option to specify the delimeter
+cat </dev/stdin | sort -t$'\t' -k 2 -n   #ascending 2nd column
+cat </dev/stdin | sort -t$'|' -k 2 -rn   #descending 2nd column, pipe delimeter
+
+
+
+
+
+
 
 
