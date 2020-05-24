@@ -241,3 +241,9 @@ awk '{print $1,":", ($2<50||$3<50||$4<50) ? "Fail" : "Pass"}'
 cat </dev/stdin | grep -w 'the'     #-w: pattern search whole word
 cat </dev/stdin | grep -iw "the"    #case insensitive
 
+
+#grep command -Output only those lines that not contain the word 'that'.
+grep -viw 'that'
+# -v   : Invert the sense of matching
+# -i   : Ignore case distinctions
+# -w   : Match only those lines containing the whole word
