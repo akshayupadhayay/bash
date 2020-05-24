@@ -232,5 +232,12 @@ read
 echo $((`tr ' ' '^'`))
 
 
+#awk command - identify whether each of the students has passed or failed.
+#A student is considered to have passed if (s)he has a score  or more in each of the three subjects.
+awk '{print $1,":", ($2<50||$3<50||$4<50) ? "Fail" : "Pass"}'
 
+
+#grep command - Output only those lines that contain the word 'the'.
+cat </dev/stdin | grep -w 'the'     #-w: pattern search whole word
+cat </dev/stdin | grep -iw "the"    #case insensitive
 
