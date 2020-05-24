@@ -247,3 +247,26 @@ grep -viw 'that'
 # -v   : Invert the sense of matching
 # -i   : Ignore case distinctions
 # -w   : Match only those lines containing the whole word
+
+
+#grep command - We retain only those lines which have at least one of the following words: the, that, then, those.
+cat </dev/stdin | grep -iw 'that\|the\|then\|those'
+
+
+#grep command - grep out and output only those credit card numbers which have two or more consecutive occurences of the same digit.
+#https://www.hackerrank.com/challenges/text-processing-in-linux-the-grep-command-5/problem
+cat </dev/stdin | grep '\([0-9]\) *\1'
+
+
+#sed command - For each line in a given input file, transform the first occurrence of the word 'the' with 'this'. The search and transformation should be strictly case sensitive.
+sed 's/\bthe\b/this/'
+
+
+#sed command - For each line in a given input file, transform all the occurrences of the word 'thy' with 'your'. The search should be case insensitive, i.e. 'thy', 'Thy', 'tHy' etc. should be transformed to 'your'.
+sed 's/thy/your/ig'
+
+
+#sed command - Given an input file, in each line, highlight all the occurrences of 'thy' by wrapping them up in brace brackets. The search should be case-insensitive.
+sed -e 's/thy/{&}/ig'
+#OR
+sed -e 's/[tT]hy/{&}/g'
