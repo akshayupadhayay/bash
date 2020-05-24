@@ -247,6 +247,17 @@ awk '{if (NF < 4){print "Not all scores are available for "$1}}'
 # => Not all scores are available for C
 
 
+#awk command - Your task is to identify the performance grade for each student. If the average of the three scores is 80 or more, the grade is 'A'. If the average is 60 or above, but less than 80, the grade is 'B'. If the average is 50 or above, but less than 60, the grade is 'C'. Otherwise the grade is 'FAIL'.
+# https://www.hackerrank.com/challenges/awk-3/problem
+awk '{avg=($2+$3+$4)/3; print $0, ":", (avg<50)?"FAIL":(avg<80)?"B":"A"}'
+
+
+#awk command - Concatenate every 2 lines of input with a semi-colon.
+# https://www.hackerrank.com/challenges/awk-4/problem
+awk 'ORS=NR%2?";":"\n"'
+# ORS stands for Output Record Separator. And NR is Number of Record (or just current line number). ORS and NR are just variables and you can do with them what you want. There are also useful FS, OFS, RS, NF, FILENAME, FNR. See http://www.thegeekstuff.com/2010/01/8-powerful-awk-built-in-variables-fs-ofs-rs-ors-nr-nf-filename-fnr/
+
+
 #grep command - Output only those lines that contain the word 'the'.
 cat </dev/stdin | grep -w 'the'     #-w: pattern search whole word
 cat </dev/stdin | grep -iw "the"    #case insensitive
