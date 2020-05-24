@@ -237,6 +237,16 @@ echo $((`tr ' ' '^'`))
 awk '{print $1,":", ($2<50||$3<50||$4<50) ? "Fail" : "Pass"}'
 
 
+#awk command - Your task is to identify those lines that do not contain all three scores for students.
+# A 25 27 50
+# B 35 75
+# C 75 78 
+# D 99 88 76
+awk '{if (NF < 4){print "Not all scores are available for "$1}}'
+# => Not all scores are available for B
+# => Not all scores are available for C
+
+
 #grep command - Output only those lines that contain the word 'the'.
 cat </dev/stdin | grep -w 'the'     #-w: pattern search whole word
 cat </dev/stdin | grep -iw "the"    #case insensitive
@@ -270,3 +280,13 @@ sed 's/thy/your/ig'
 sed -e 's/thy/{&}/ig'
 #OR
 sed -e 's/[tT]hy/{&}/g'
+
+
+#sed command - Given n lines of credit card numbers, mask the first 12 digits of each credit card number with an asterisk (i.e., *) and print the masked card number on a new line. Each credit card number consists of four space-separated groups of four digits. For example, the credit card number 1234 5678 9101 1234 would be masked and printed as **** **** **** 1234.
+sed 's/[0-9]\+ /**** /g'
+
+
+sed command - Given an input file, with N credit card numbers, each in a new line, your task is to reverse the ordering of segments in each credit card number. 
+# 1234 5678 9101 1234
+#=> 1234 9101 5678 1234
+sed -r 's/(.+ )(.+ )(.+ )(....)/\4 \3\2\1/'
