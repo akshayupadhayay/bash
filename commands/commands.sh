@@ -297,7 +297,19 @@ sed -e 's/[tT]hy/{&}/g'
 sed 's/[0-9]\+ /**** /g'
 
 
-sed command - Given an input file, with N credit card numbers, each in a new line, your task is to reverse the ordering of segments in each credit card number. 
+#sed command - Given an input file, with N credit card numbers, each in a new line, your task is to reverse the ordering of segments in each credit card number. 
 # 1234 5678 9101 1234
 #=> 1234 9101 5678 1234
 sed -r 's/(.+ )(.+ )(.+ )(....)/\4 \3\2\1/'
+
+
+#Send standard output and error to logfile
+2>&1 >output.log 
+#means first start sending all file handle 2 stuff (standard error) to file handle 1 (standard output) then send that to the file output.log. 
+#In other words, send standard error and standard output to the log file.
+
+2>&1 | tee output.log 
+#is the same with the 2>&1 bit, it combines standard output and standard error on to the standard output stream. 
+# It then pipes that through the tee program which will send its standard input to its standard output (like cat) and also to the file. 
+# So it combines the two streams (error and output), then outputs that to the terminal and the file.
+
